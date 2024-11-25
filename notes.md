@@ -163,3 +163,43 @@ Semelhante ao SETS, porém possui algumas diferenças, como poder armazenar valo
 - LPOS: Trás a posição do item no index
 
 ```LPOS orders ryu```
+
+### HASHES
+
+- É basicamento um objeto, porém todos os valores devem ser strings, porém não pode ter nest properties 
+
+- HSET: Adicionar um hash para um item
+
+```HSET books:1 title "Name of the Wind"```
+
+OBS.: Para sobreescrever, basta enviar o mesmo comando com valor diferente.
+
+- HGET: Retorna um hash de um item
+
+```HGET books:1 title```
+
+- HGETALL: Retorna todos os itens do hash, valores e nomes dos itens
+
+```HGETALL books:1```
+
+- HEXISTS: Verifica se o item existe no hash
+
+```HEXISTS books:1 title```
+
+  OBS.: Retorna 0 ou 1
+
+- HKEYS: Retorna todas as chaves do hash
+
+```HKEYS books:1```
+
+- HVALS: Retorna todos os valores do hash
+
+```HVALS books:1```
+
+- HDEL: Apaga algum item do hash
+
+```HDEL books:1 title```
+
+- DEL: apaga todo o hash
+
+```DEL books:1```
