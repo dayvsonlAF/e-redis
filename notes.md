@@ -93,6 +93,10 @@ EX:
 ```SET name yoshi EX 7```
 - Assim expira em 7 segundos.
 
+NX:
+```ZADD books NX 5 'the final empire'```
+- Assim, somente adiciona/atualiza o score se ainda não existir
+ 
 
 ### SETS
 
@@ -203,3 +207,18 @@ OBS.: Para sobreescrever, basta enviar o mesmo comando com valor diferente.
 - DEL: apaga todo o hash
 
 ```DEL books:1```
+
+### Redis Sorted SETS
+
+- É uma coleção de strings unicas, ordenadas;
+
+```ZADD books 1 'the final empire'```
+
+Dessa forma, criamos um set, com um score de valor 1. São ordenados em ordem crescente.
+![alt text](image-5.png)
+
+### REDIS STACK
+
+- Ao usar o redis stack, podemos utilizar JSON, para isso, usamos JSON na frente do comando.
+
+```JSON.SET authors:1 $ '{}'```
